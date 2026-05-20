@@ -1,4 +1,4 @@
-name: BeSA STS Demo
+name: BeSA STS Demo - Allowed
 
 on: 
   workflow_dispatch:

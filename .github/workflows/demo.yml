@@ -1,0 +1,22 @@
+name: BeSA STS Demo
+
+on: 
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  test-aws:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v6.1.0
+        with:
+          aws-region: us-east-1
+          role-to-assume: arn:aws:iam::211125598140:role/besa-sts-claims-demo
+    
+      - name: Verify
+        run: aws sts-get-caller-identity 

@@ -19,4 +19,4 @@ jobs:
           role-to-assume: arn:aws:iam::211125598140:role/besa-sts-claims-demo
     
       - name: Verify
-        run: aws sts-get-caller-identity 
+        run: aws sts get-caller-identity 

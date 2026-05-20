@@ -16,7 +16,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v6.1.0
         with:
           aws-region: us-east-1
-          role-to-assume: arn:aws:iam::211125598140:role/besa-sts-claims-demo
+          role-to-assume: ${{ secrets.ROLE_ARN }}
     
       - name: Verify
         run: aws sts get-caller-identity 
